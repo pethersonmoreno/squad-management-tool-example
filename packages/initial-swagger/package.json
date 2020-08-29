@@ -1,0 +1,27 @@
+{
+  "name": "@squad-management-tool/initial-swagger",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/pethersonmoreno/squad-management-tool-example.git"
+  },
+  "keywords": [
+    "swagger"
+  ],
+  "author": "Petherson Moreno <pethermoreno@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pethersonmoreno/squad-management-tool-example/issues"
+  },
+  "homepage": "https://github.com/pethersonmoreno/squad-management-tool-example#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "swagger-ui-express": "^4.1.4",
+    "yamljs": "^0.3.0"
+  }
+}
