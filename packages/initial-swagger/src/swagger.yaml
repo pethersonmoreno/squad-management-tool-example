@@ -72,7 +72,7 @@ paths:
     get:
       tags:
       - "team"
-      summary: "Finds Teams with highest and lowest by qtd top"
+      summary: "Find Teams with highest and lowest by qtd top"
       operationId: "findTeamsHighestLowestAgeByQtdTop"
       produces:
       - "application/json"
@@ -183,7 +183,7 @@ paths:
     delete:
       tags:
       - "team"
-      summary: "Deletes a team"
+      summary: "Delete a team"
       description: ""
       operationId: "deleteTeam"
       produces:
@@ -321,9 +321,6 @@ definitions:
         items:
           type: "object"
           properties:
-            additionalProperties:
-              type: "integer"
-              format: "int32"
             fieldPosition:
               type: "string"
               description: "field position of player in this team"
