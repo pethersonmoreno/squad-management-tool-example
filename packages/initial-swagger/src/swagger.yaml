@@ -280,6 +280,8 @@ paths:
             properties:
               mostPickedOn:
                 $ref: "#/definitions/PlayerPickedOnPercentage"
+              lessPickedOn:
+                $ref: "#/definitions/PlayerPickedOnPercentage"
         "404":
           description: "No player found in teams"
           schema:
