@@ -1,0 +1,27 @@
+{
+  "name": "@squad-management-tool/api",
+  "version": "0.0.1",
+  "description": "Squad Management Tool API",
+  "main": "dist/server.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/pethersonmoreno/squad-management-tool-example.git"
+  },
+  "keywords": [
+    "api",
+    "typescript",
+    "solid",
+    "usecases",
+    "soccer",
+    "management",
+    "tool",
+    "squad"
+  ],
+  "author": "Petherson Moreno <pethermoreno@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pethersonmoreno/squad-management-tool-example/issues"
+  },
+  "homepage": "https://github.com/pethersonmoreno/squad-management-tool-example#readme"
+}

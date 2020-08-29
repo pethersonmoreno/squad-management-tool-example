@@ -10,3 +10,7 @@ yarn
 # start a simple server with initial swagger used at 'http://localhost:3001/'
 yarn start:initial-swagger
 ```
+
+## API
+
+[More details with project structure](API.md)
