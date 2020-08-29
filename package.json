@@ -1,0 +1,21 @@
+{
+  "name": "@squad-management-tool/monorepo",
+  "version": "0.0.1",
+  "main": "index.js",
+  "repository": "git@github.com:pethersonmoreno/squad-management-tool-example.git",
+  "author": "Petherson Moreno <pethermoreno@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "postinstall": "lerna run prepare"
+  },
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ],
+    "nohoist": []
+  },
+  "dependencies": {
+    "lerna": "^3.22.1"
+  }
+}
