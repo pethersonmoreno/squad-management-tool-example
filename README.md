@@ -9,6 +9,9 @@ yarn
 
 # start a simple server with initial swagger used at 'http://localhost:3001/'
 yarn start:initial-swagger
+
+# start frontend web project in development mode
+yarn start:web
 ```
 
 ## API
