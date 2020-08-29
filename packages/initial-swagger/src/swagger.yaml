@@ -231,7 +231,7 @@ paths:
           schema:
             type: "array"
             items:
-              $ref: "#/definitions/Team"
+              $ref: "#/definitions/Player"
         "500":
           description: "Internal Server Error"
           schema:
