@@ -3,8 +3,9 @@ import './Footer.scss';
 
 function Footer() {
   return (
-    <div>
-    </div>
+    <footer className="app-footer">
+      <p className="__content">2020 - All rights reserved</p>
+    </footer>
   );
 }
 

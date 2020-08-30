@@ -6,8 +6,6 @@ header.app-header {
   @media (min-width: $min-width-desktop) {
     padding: 0 $padding-desktop;
   }
-
-  width: 100%;
   height: $header-height;
   overflow: hidden;
   background: linear-gradient(270deg, #8A206F 0.15%, #C00E4F 100%);

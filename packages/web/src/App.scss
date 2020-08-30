@@ -1,3 +1,20 @@
+@import './assets/styles/vars';
+
 .app-squad-management-tool {
-  
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  > .app-content{
+    flex-grow: 1;
+    padding: 0 $padding-mobile;
+    @media (min-width: $min-width-desktop) {
+      padding: 0 $padding-desktop;
+    }
+    display: flex;
+    > .__content{
+      flex-grow: 1;
+      max-width: $max-width-page;
+      margin: 0 auto;
+    }
+  }
 }
