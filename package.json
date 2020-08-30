@@ -9,7 +9,8 @@
   "scripts": {
     "postinstall": "lerna run prepare",
     "start:initial-swagger": "lerna run --scope=@squad-management-tool/initial-swagger --stream start",
-    "start:web": "cd packages/web && yarn start"
+    "start:web": "cd packages/web && yarn start",
+    "start:api": "cd packages/api && yarn start"
   },
   "workspaces": {
     "packages": [
