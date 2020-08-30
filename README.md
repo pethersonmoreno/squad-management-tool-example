@@ -17,3 +17,8 @@ yarn start:web
 ## API
 
 [More details with project structure](API.md)
+
+
+## Layout
+
+Created Layout in Figma to develop project: [Layout-Squad-Management-Tool.fig](packages/web/Layout-Squad-Management-Tool.fig)
