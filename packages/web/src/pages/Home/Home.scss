@@ -1,0 +1,36 @@
+@import '../../assets/styles/vars';
+
+$half-padding-mobile: $padding-mobile/2;
+$half-padding-desktop: $padding-desktop/2;
+.home{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  @media (min-width: $min-width-desktop) {
+    flex-direction: row;
+  }
+  > .section-left {
+    width: 100%;
+    align-self: flex-start;
+    margin-bottom: $half-padding-mobile;
+    @media (min-width: $min-width-desktop) {
+      margin-bottom: 0;
+      flex-basis: 0;
+      flex-grow: 1;
+      min-height: 100%;
+      margin-right: $half-padding-desktop;
+    }
+  }
+  > .section-right {
+    align-self: flex-end;
+    width: 100%;
+    margin-top: $half-padding-mobile;
+    @media (min-width: $min-width-desktop) {
+      margin-top: 0;
+      flex-basis: 0;
+      flex-grow: 1;
+      min-height: 100%;
+      margin-left: $half-padding-desktop;
+    }
+  }
+}

@@ -6,15 +6,16 @@
   min-height: 100vh;
   > .app-content{
     flex-grow: 1;
-    padding: 0 $padding-mobile;
+    padding: $padding-mobile $padding-mobile 0;
     @media (min-width: $min-width-desktop) {
-      padding: 0 $padding-desktop;
+      padding: $padding-desktop $padding-desktop 0;
     }
     display: flex;
     > .__content{
       flex-grow: 1;
       max-width: $max-width-page;
       margin: 0 auto;
+      display: flex;
     }
   }
 }

@@ -1,0 +1,18 @@
+.button-order-by{
+  > svg {
+    > .__desc {
+      opacity: 0.5;
+      fill: #555759;
+    }
+    > .__asc {
+      opacity: 0.5;
+      fill: #555759;
+    }
+  }
+  &.--direction-asc > svg > .__asc {
+    opacity: 1;
+  }
+  &.--direction-desc > svg > .__desc {
+    opacity: 1;
+  }
+}

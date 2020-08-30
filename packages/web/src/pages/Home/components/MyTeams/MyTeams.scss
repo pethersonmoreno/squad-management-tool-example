@@ -1,0 +1,107 @@
+@import '../../../../assets/styles/vars';
+
+.my-teams{
+  background: #FFFFFF;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.06);
+  border-radius: 10px;
+  > .__header{
+    height: 78px;
+    border-bottom: 1px solid #EEEEEE;
+    padding: 0 32px;
+    display: flex;
+    > h1 {
+      height: 100%;
+      margin: 0;
+      flex-grow: 1;
+    }
+    > button {
+      margin-top: 20px;
+      height:3.7rem;
+    }
+  }
+  > .__table {
+    padding: 0;
+    margin-top: 15px;
+    display: grid;
+    grid-template-columns: 100%;
+    > .__row-header, > .__row{
+      display: grid;
+      height: 50px;
+      padding: 0 10px;
+      color: #353535;
+      border-bottom: 1px solid #eeeeee;
+    }
+    > .__row-header{
+      grid-template-columns: 100%;
+      > .__cell{
+        > .__text-with-button{
+          width: 100%;
+          display: flex;
+          > .__text {
+            flex-grow: 1;
+          }
+          > button {
+            align-self: flex-end;
+            margin-left: auto;
+          }
+        }
+        &.--description {
+          border-left: 1px solid #DEDEDE;
+        }
+      }
+    }
+    > .__row{
+      grid-template-columns: minmax(25%, 100%) 90px;
+      > .__cell{
+        &.--description {
+          border-left: 1px solid transparent;
+        }
+        &.--buttons {
+          font-size: 1.2rem;
+          margin-left: auto;
+        }
+      }
+    }
+    > .__row-header, > .__row{
+      > .__cell{
+        margin: 9.5px 0;
+        padding: 0 10px;
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 1.4rem;
+        line-height: 1.4rem;
+        display: flex;
+        align-items: center;
+      }
+    }
+    &.--show-description{
+      > .__row-header, > .__row{
+        display: grid;
+        grid-template-columns: minmax(25%, 30%) minmax(100px, 100%) 90px;
+      }
+    }
+  }
+  @media (min-width: $min-width-desktop) {
+    border-radius: 10px 10px 0px 0px;
+    > .__table {
+      padding: 0 8px;
+      > .__row-header, > .__row{
+        > .__cell{
+          &.--description {
+            padding-left: 20px;
+          }
+        }
+      }
+      > .__row{
+        &:hover{
+          border-bottom-color: transparent;
+          background: #F7EEF7;
+          border-radius: 6px;
+
+          color: #B3427F;
+        }
+      }
+    }
+  }
+}
