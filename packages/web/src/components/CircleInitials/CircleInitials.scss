@@ -1,0 +1,30 @@
+.circle-initials{
+  position: relative;
+  width: 1.0em;
+  height: 1.0em;
+  > svg {
+    width: 1.0em;
+    height: 1.0em;
+    fill: none;
+    > circle {
+      fill: #F3F5F7;
+    }
+  }
+  > .initials{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 0.457em;
+    line-height: 0.543em;
+
+    color: #333333;
+  }
+}
