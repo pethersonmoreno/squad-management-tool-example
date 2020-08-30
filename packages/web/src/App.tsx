@@ -1,39 +1,24 @@
 import React from 'react';
-import './App.css';
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
-
-function Home() {
-  return (
-    <div>
-      <h2>Home</h2>
-      <Link to="/create-team">Create team</Link>
-    </div>
-  );
-}
-
-function TeamForm() {
-  return (
-    <div>
-      <h2>Team Form</h2>
-      <Link to="/">Home</Link>
-    </div>
-  );
-}
-
+import './App.scss';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import TeamForm from './pages/TeamForm';
+import Home from './pages/Home';
+import Header from './components/Header';
 
 function App() {
   return (
     <Router>
-    <div className="App">
-      <Switch>
-        <Route path="/create-team">
-          <TeamForm />
-        </Route>
-        <Route path="/">
-          <Home />
-        </Route>
-      </Switch>
-    </div>
+      <div className="app-squad-management-tool">
+        <Header />
+        <Switch>
+          <Route path="/create-team">
+            <TeamForm />
+          </Route>
+          <Route path="/">
+            <Home />
+          </Route>
+        </Switch>
+      </div>
     </Router>
   );
 }
