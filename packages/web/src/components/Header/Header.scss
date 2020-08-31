@@ -16,8 +16,15 @@ header.app-header {
     display: flex;
     align-items: center;
     > .__logo {
-      width: 37px;
+      display: block;
       height: 37px;
+      > img {
+        width: 37px;
+        height: 37px;
+      }
+      &:hover{
+        opacity: 0.8;
+      }
     }
     > .__app-name {
       margin: 0;
@@ -32,6 +39,12 @@ header.app-header {
       display: flex;
       align-items: center;
       margin-left: 1.7rem;
+      &:hover, &:active, &:visited, &:focus {
+        text-decoration: none;
+      }
+      &:hover {
+        opacity: 0.8;
+      }
     }
     > .__user-info{
       display: flex;

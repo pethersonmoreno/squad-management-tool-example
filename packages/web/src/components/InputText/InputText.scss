@@ -1,0 +1,41 @@
+.input-text{
+  display: flex;
+  flex-direction: column;
+  >.__label{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 1.4rem;
+    line-height: 1.9rem;
+
+    display: flex;
+    align-items: center;
+
+    color: #3B3B3B;
+  }
+  > input{
+    margin-top: 0.9rem;
+    padding:0 1.2rem;
+    border:none;
+    border: 1px solid #DADADA;
+    border-radius: 3px;
+    font-family: Roboto;
+
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 3.0rem;
+    color: #000000;
+    &::placeholder {
+      color: #CCCCCC;
+    }
+  }
+  &.--has-error {
+    >.__label{
+      color: #C50341;
+    }
+    > input{
+      border-color: #90022F;
+    }
+  }
+}

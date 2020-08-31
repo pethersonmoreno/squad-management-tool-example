@@ -1,9 +1,13 @@
 import { axiosInstance } from './axiosInstance';
 
+export type TeamType = 'Fantasy' | 'Real';
+
 export type Team = {
   id: string;
   name: string;
   description?: string;
+  website?: string;
+  type: TeamType;
 };
 
 const getAll = async (): Promise<Team[]>=>{
