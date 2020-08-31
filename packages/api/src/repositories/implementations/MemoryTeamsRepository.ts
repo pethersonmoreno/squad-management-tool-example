@@ -2,12 +2,12 @@ import { TeamsRepository } from "../TeamsRepository";
 import { Team } from "../../entities/Team";
 
 let teamsList: Team[] = [
-  new Team({ name: 'Barcelona', description: 'Barcelona Squad' }),
-  new Team({ name: 'Real Madrid', description: 'Real Madrid Squad' }),
-  new Team({ name: 'Milan', description: 'Milan Squad' }),
-  new Team({ name: 'Liverpool', description: 'Liverpool Squad' }),
-  new Team({ name: 'Bayer Munich', description: 'Bayer Munich Squad' }),
-  new Team({ name: 'Lazio', description: 'Lazio Squad' }),
+  new Team({ name: 'Barcelona', description: 'Barcelona Squad', type: 'Real' }),
+  new Team({ name: 'Real Madrid', description: 'Real Madrid Squad', type: 'Real' }),
+  new Team({ name: 'Milan', description: 'Milan Squad', type: 'Real' }),
+  new Team({ name: 'Liverpool', description: 'Liverpool Squad', type: 'Real' }),
+  new Team({ name: 'Bayer Munich', description: 'Bayer Munich Squad', type: 'Real' }),
+  new Team({ name: 'Lazio', description: 'Lazio Squad', type: 'Real' }),
 ];
 
 export class MemoryTeamsRepository implements TeamsRepository {

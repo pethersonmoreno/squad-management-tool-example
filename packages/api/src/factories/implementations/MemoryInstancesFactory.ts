@@ -7,6 +7,11 @@ import { RemoveTeamController } from "../../controllers/team/RemoveTeamControlle
 import { RemoveTeamUsecase } from "../../usecases/team/RemoveTeamUsecase";
 import { GetTeamController } from "../../controllers/team/GetTeamController";
 import { GetTeamUsecase } from "../../usecases/team/GetTeamUsecase";
+import { CreateTeamController } from "../../controllers/team/CreateTeamController";
+import { CreateTeamUsecase } from "../../usecases/team/CreateTeamUsecase";
+import { UpdateTeamController } from "../../controllers/team/UpdateTeamController";
+import { UpdateTeamUsecase } from "../../usecases/team/UpdateTeamUsecase";
+
 
 export class MemoryInstancesFactory implements InstancesFactory{
   createGetAllTeamsController(): GetAllTeamsController {
@@ -18,7 +23,20 @@ export class MemoryInstancesFactory implements InstancesFactory{
   createGetTeamController(): GetTeamController {
     return new GetTeamController(this.createGetTeamUsecase());
   }
+  createCreateTeamController(): CreateTeamController {
+    return new CreateTeamController(this.createCreateTeamUsecase());
+  }
+  createUpdateTeamController(): UpdateTeamController {
+    return new UpdateTeamController(this.createUpdateTeamUsecase());
+  }
   
+  createUpdateTeamUsecase(): UpdateTeamUsecase {
+    return new UpdateTeamUsecase(this.createTeamsRepository());;
+  }
+  
+  createCreateTeamUsecase(): CreateTeamUsecase {
+    return new CreateTeamUsecase(this.createTeamsRepository());;
+  }
   createGetAllTeamsUsecase(): GetAllTeamsUsecase {
     return new GetAllTeamsUsecase(this.createTeamsRepository());
   }
