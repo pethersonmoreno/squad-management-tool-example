@@ -17,6 +17,9 @@ function App() {
               <Route path="/create-team">
                 <TeamForm />
               </Route>
+              <Route path="/edit-team/:id">
+                <TeamForm />
+              </Route>
               <Route path="/">
                 <Home />
               </Route>

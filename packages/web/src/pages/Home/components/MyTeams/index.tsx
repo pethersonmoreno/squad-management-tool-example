@@ -1,62 +1,44 @@
-import React, { useState, useCallback, useMemo } from 'react';
+import React, { useState, useCallback, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import './MyTeams.scss';
 import FloatingIconButtonPlus from '../../../../components/FloatingIconButtonPlus';
 import ButtonOrderBy from '../../../../components/ButtonOrderBy';
 import IconButton from '../../../../components/IconButton';
-
-const teams = [
-  { name: 'Barcelona', description: 'Barcelona Squad' },
-  { name: 'Real Madrid', description: 'Real Madrid Squad' },
-  { name: 'Milan', description: 'Milan Squad' },
-  { name: 'Liverpool', description: 'Liverpool Squad' },
-  { name: 'Bayer Munich', description: 'Bayer Munich Squad' },
-  { name: 'Lazio', description: 'Lazio Squad' },
-];
+import { Team, teamService } from '../../../../services/teamService';
+import { useSortedList } from './hooks/useSortedList';
+import Swal from 'sweetalert2'
 
 const SHOW_DESCRIPTION = false;
 const SHOW_SHARE_ACTION = false;
 
-const sortArrayByFieldName = (array: any[], field: string, direction: 'asc'|'desc') => {
-  const lessThanResult = direction === 'asc'?-1:1;
-  const greaterThanResult = direction === 'asc'?1:-1;
-  return array.sort((a, b) => {
-    if(a[field] < b[field]){
-      return lessThanResult;
-    }
-    if(a[field] > b[field]){
-      return greaterThanResult;
-    }
-    return 0;
-  });
-};
 
-type TFieldName = 'name' | 'description';
-
-type TOrder = {
-  field: TFieldName;
-  direction: 'asc' | 'desc';
-}
+type TTeamFieldName = 'name' | 'description';
 
 function MyTeams({className}:{className?: string}) {
   const history = useHistory();
-  const [order, setOrder] = useState<TOrder | null>(null);
-  const sortedTeams = useMemo(()=>{
-    if(!order){
-      return teams;
-    }
-    return sortArrayByFieldName(teams, order.field, order.direction)
-  }, [order]);
-  const changeOrder = useCallback((field: TFieldName) => {
-    if(order && order.field === field){
-      setOrder({
-        field,
-        direction: order.direction === 'asc'?'desc':'asc',
+  const [teams, setTeams] = useState<Team[]>([]);
+  const [sortedTeams, order, changeOrder] = useSortedList<TTeamFieldName, Team>(teams);
+
+  useEffect(()=>{
+    teamService.getAll().then(list => {
+      setTeams(list);
+    });
+  }, []);
+  const removeTeam = useCallback((id: string)=>{
+    teamService.remove(id)
+      .then(()=>{
+        setTeams(oldTeams => oldTeams.filter(team => team.id !== id));
+      })
+      .catch(error => {
+        Swal.fire({
+          title: 'Error!',
+          text: error?.response?.data?.message || error.message,
+          icon: 'error',
+          confirmButtonText: 'OK'
+        })
       });
-      return;
-    }
-    setOrder({ field, direction: 'asc' });
-  }, [order]);
+  },[])
+
   return (
     <div className={`my-teams ${className || ''}`}>
       <header className="__header">
@@ -86,14 +68,14 @@ function MyTeams({className}:{className?: string}) {
           </div>}
         </div>
         {sortedTeams.map(team => (
-          <div key={team.name} className="__row">
+          <div key={team.id} className="__row">
             <div className="__cell">{team.name}</div>
             {SHOW_DESCRIPTION && <div className="__cell --description">{team.description}</div>}
             <div className="__cell --buttons">
-              <IconButton onClick={()=>alert('todo: create action')} icon='delete' />
+              <IconButton onClick={()=>removeTeam(team.id)} icon='delete' />
               {SHOW_SHARE_ACTION && <IconButton onClick={()=>alert('todo: create action')} icon='share' />}
               <IconButton onClick={()=>{
-                history.push('/create-team')
+                history.push(`/edit-team/${team.id}`)
               }} icon='edit' />
             </div>
           </div>
