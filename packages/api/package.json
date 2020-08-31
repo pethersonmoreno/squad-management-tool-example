@@ -27,10 +27,12 @@
   },
   "homepage": "https://github.com/pethersonmoreno/squad-management-tool-example#readme",
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.17.1",
     "uuid": "^8.3.0"
   },
   "devDependencies": {
+    "@types/cors": "^2.8.7",
     "@types/express": "^4.17.7",
     "@types/uuid": "^8.3.0",
     "ts-node-dev": "^1.0.0-pre.61",
