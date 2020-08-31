@@ -1,14 +1,15 @@
 import { Request, Response } from "express";
-import { GetAllTeamsUsecase } from "../../usecases/team/GetAllTeamsUsecase";
+import { GetTeamUsecase } from "../../usecases/team/GetTeamUsecase";
 
-export class GetAllTeamsController {
+export class GetTeamController {
   constructor(
-    private readonly getAllTeamsUsecase: GetAllTeamsUsecase,
+    private readonly getTeamUsecase: GetTeamUsecase,
   ){}
   handle = async (request: Request, response: Response): Promise<Response> => {
+    const { id } = request.params;
     try {
-      const list = await this.getAllTeamsUsecase.execute();
-      return response.status(200).json(list).send();
+      const team = await this.getTeamUsecase.execute(id);
+      return response.status(200).json(team).send();
     } catch(err) {
       return response
         .status(400).json({

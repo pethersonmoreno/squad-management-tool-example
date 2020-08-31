@@ -7,13 +7,12 @@ const router = Router();
 const instancesFactory: InstancesFactory = new MemoryInstancesFactory();
 
 const getAllTeamsController = instancesFactory.createGetAllTeamsController();
-
+const removeTeamController = instancesFactory.createRemoveTeamController();
+const getTeamController = instancesFactory.createGetTeamController();
 
 
 router.get('/team', getAllTeamsController.handle);
-
-//continuar no vídeo: https://www.youtube.com/watch?v=vAV4Vy4jfkc
-
-//12min e 14seg
+router.delete('/team/:id', removeTeamController.handle);
+router.get('/team/:id', getTeamController.handle);
 
 export { router };

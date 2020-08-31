@@ -15,7 +15,7 @@ export class MemoryTeamsRepository implements TeamsRepository {
     teamsList = [...teamsList, team]
   }
   async update(team: Team): Promise<void> {
-    const teamFound = teamsList.find(currentTeam => currentTeam.id !== team.id);
+    const teamFound = teamsList.find(currentTeam => currentTeam.id === team.id);
     if(!teamFound){
       throw new Error("Team not found");
     }
@@ -27,7 +27,7 @@ export class MemoryTeamsRepository implements TeamsRepository {
     });
   }
   async removeById(id: string): Promise<void> {
-    const teamFound = teamsList.find(team => team.id !== id);
+    const teamFound = teamsList.find(team => team.id === id);
     if(!teamFound){
       throw new Error("Team not found");
     }

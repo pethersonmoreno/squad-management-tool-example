@@ -1,13 +1,13 @@
 import { TeamsRepository } from "../../repositories/TeamsRepository";
 
-export class GetAllTeamsUsecase{
+export class GetTeamUsecase{
   constructor(
     private teamsRepository: TeamsRepository
   ){ }
 
-  async execute() {
-    const allTeams = await this.teamsRepository.getAll();
+  async execute(id: string) {
+    const teamFound = await this.teamsRepository.findById(id);
 
-    return allTeams;
+    return teamFound;
   }
 }
